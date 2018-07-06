@@ -18,7 +18,6 @@ namespace Pizzaria.Infra.Data.Tests.Features.Produtos
     {
         private IProdutoRepositorio _repositorio;
         private DataContext _contexto;
-        private Produto _produto;
 
         [SetUp]
         public void Inicializacao()
@@ -35,6 +34,7 @@ namespace Pizzaria.Infra.Data.Tests.Features.Produtos
         public void Produto_InfraData_Salvar_Pizza_Pequena_De_Calabresa()
         {
             //Cenário
+            long idExperado = 2;
             Produto produto = ObjectMother.ObterPizzaPequenaDeCalabresa();
 
             //Ação
@@ -42,6 +42,7 @@ namespace Pizzaria.Infra.Data.Tests.Features.Produtos
 
             //Verifica
             resultado.Should().NotBeNull();
+            resultado.Id.Should().Be(idExperado);
         }
 
         [Test]
@@ -58,12 +59,14 @@ namespace Pizzaria.Infra.Data.Tests.Features.Produtos
         [Test]
         public void Produtos_InfraData_Deve_Buscar_Por_Um_Id_De_Produto()
         {
+            //Cenario
+            long idProcura = 1;
             //Ação
-            var produto = _repositorio.BuscarPorId(_produto.Id);
+            var produto = _repositorio.BuscarPorId(idProcura);
 
             //Verifica
             produto.Should().NotBeNull();
-            produto.Id.Should().Equals(_produto.Id);
+            produto.Id.Should().Equals(idProcura);
         }
 
         [Test]
@@ -98,17 +101,16 @@ namespace Pizzaria.Infra.Data.Tests.Features.Produtos
         public void Produtos_InfraData_Deve_Deletar_Um_Produto()
         {
             //Cenário
-            long enderecoId = _produto.Id;
-            _repositorio.Excluir(_produto);
+            long idProduto = 1;
+            var produto = _repositorio.BuscarPorId(idProduto);
 
             //Ação
-            var produtoDB = _repositorio.BuscarPorId(_produto.Id);
-            var enderecoAluno = _repositorio.BuscarPorId(enderecoId);
+            _repositorio.Excluir(produto);
 
             //Verifica
+            var produtoDB = _repositorio.BuscarPorId(idProduto);
             produtoDB.Should().BeNull();
-            var AlunoContexto = _contexto.Produtos.Find(enderecoAluno.Id);
-            AlunoContexto.Should().BeNull();
+           
         }
     }
 }

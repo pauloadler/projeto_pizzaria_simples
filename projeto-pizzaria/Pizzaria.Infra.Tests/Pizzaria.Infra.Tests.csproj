@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="CNPJs\CnpjTest.cs" />
     <Compile Include="CPFs\CpfTest.cs" />
+    <Compile Include="Metodo Extensao\AjudanteDataTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

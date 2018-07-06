@@ -55,6 +55,7 @@
     <Compile Include="CPFs\CpfValueLessThanElevenException.cs" />
     <Compile Include="CPFs\CpfValueNullOrEmptyException.cs" />
     <Compile Include="CPFs\CpfValueOverFlowException.cs" />
+    <Compile Include="Metodo Extensao\AjudanteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -20,21 +20,17 @@ namespace Pizzaria.Infra.Data.Tests.Features.Clientes
     {
         private IClienteRepositorio _repositorio;
         private DataContext _contexto;
-        private Cpf _cpf;
-        private Cnpj _cnpj;
         private Endereco _endereco;
+
 
         [SetUp]
         public void Inicializacao()
         {
-            _cpf = ObjectMother.GetCpf();
-            _cnpj = ObjectMother.GetCnpj();
-            _endereco = ObjectMother.GetEndereco();
-            //_cliente = ObjectMother.ObterClienteTipoPessoaFisica(_cpf, _cnpj, _endereco);
-
             _contexto = new DataContext();
             Database.SetInitializer(new CriarBaseDeDados());
             _contexto.Database.Initialize(true);
+
+            _endereco = ObjectMother.ObterEndereco();
 
             _repositorio = new ClienteSQLRepositorio(_contexto);
         }

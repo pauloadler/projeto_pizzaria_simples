@@ -42,6 +42,11 @@
   <ItemGroup>
     <Compile Include="Enums\TipoProdutoEnum .cs" />
     <Compile Include="Features\Clientes\Cliente.cs" />
+    <Compile Include="Features\Clientes\ClienteEnderecoNuloExcecao.cs" />
+    <Compile Include="Features\Clientes\ClienteNomeNuloOuVazioExcecao.cs" />
+    <Compile Include="Features\Clientes\ClienteNumeroDocumentoNuloOuVazioExcecao.cs" />
+    <Compile Include="Features\Clientes\ClienteTelefoneNuloOuVazioExcecao.cs" />
+    <Compile Include="Features\Clientes\ClienteTipoClienteInvalidoExcecao.cs" />
     <Compile Include="Features\Clientes\IClienteRepositorio.cs" />
     <Compile Include="Features\Enderecos\Endereco.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
@@ -50,7 +55,8 @@
     <Compile Include="Enums\FormaPagamentoEnum.cs" />
     <Compile Include="Features\Enderecos\EnderecoBairroNuloOuVazioExcecao.cs" />
     <Compile Include="Features\Enderecos\EnderecoCepNuloOuVazioExcecao.cs" />
-    <Compile Include="Features\Enderecos\EnderecoCidadeNuloOuVazioExcecao.cs" />
+    <Compile Include="Features\Enderecos\EnderecoCidadeNulaOuVaziaExcecao.cs" />
+    <Compile Include="Features\Enderecos\EnderecoComplementoNuloOuVazioExcecao.cs" />
     <Compile Include="Features\Enderecos\EnderecoLogradouroNuloOuVazioExcecao.cs" />
     <Compile Include="Features\Enderecos\EnderecoNumeroInvalidoExcecao.cs" />
     <Compile Include="Features\Enderecos\EnderecoUFNuloOuVazioExcecao.cs" />
@@ -59,6 +65,8 @@
     <Compile Include="Features\ItensPedido\ItemPedidoQuantidadeZeroExcessao.cs" />
     <Compile Include="Features\Pedidos\IPedidoRepositorio.cs" />
     <Compile Include="Features\Pedidos\Pedido.cs" />
+    <Compile Include="Features\Pedidos\PedidoClienteNuloExcecao.cs" />
+    <Compile Include="Features\Pedidos\PedidoItensPedidosVazioExcecao.cs" />
     <Compile Include="Features\Produtos\IProdutoRepositorio.cs" />
     <Compile Include="Features\Produtos\Produto.cs" />
     <Compile Include="Features\Produtos\ProdutoDescricaoNulaOuVaziaExcecao.cs" />
