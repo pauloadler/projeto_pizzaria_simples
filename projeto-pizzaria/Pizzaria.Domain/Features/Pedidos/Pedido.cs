@@ -25,20 +25,18 @@ namespace Pizzaria.Domain.Features.Pedidos
         public DateTime Data { get; set; } 
         public StatusPedidoEnum StatusPedido { get; set; }
         public List<ItemPedido> ItensPedidos { get; set; }
-
+    
+        //Dependencia
         public long ClienteId { get; set; }
         public Cliente Cliente { get; set; }
 
-        public virtual void Valida()
+        public virtual void Validar()
         {
-            //Os dados Obrigatorios
-
             if (Cliente == null)
             {
-                //Execeção
+                throw new PedidoClienteNuloExcecao();
             }
 
-            //Validação da Data menor que agora (Frescuragem)
             //if (Data)
             //{
             //
@@ -46,7 +44,7 @@ namespace Pizzaria.Domain.Features.Pedidos
 
             if (ItensPedidos.Count > -1)
             {
-                //Execeção
+                throw new PedidoItensPedidosVazioExcecao();
             }
 
     

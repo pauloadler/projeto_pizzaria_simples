@@ -1,5 +1,6 @@
 ﻿using Pizzaria.Domain.Features.Clientes;
 using Pizzaria.Domain.Features.Enderecos;
+using Pizzaria.Domain.Features.Produtos;
 using Pizzaria.Infra.CNPJs;
 using Pizzaria.Infra.CPFs;
 using Pizzaria.Infra.Data;
@@ -18,12 +19,14 @@ namespace Pizzaria.Common.Tests.Base
         {
             Cpf cpf = ObjectMother.GetCpf();
             Cnpj cnpj = ObjectMother.GetCnpj();
-            Endereco endereco = ObjectMother.GetEndereco();
+            Endereco endereco = ObjectMother.ObterEndereco();
             Cliente clienteFisico = ObjectMother.ObterClienteTipoPessoaFisica(endereco);
             Cliente clienteJuridico = ObjectMother.ObterClienteTipoPessoaJuridica(endereco);
+            Produto produto = ObjectMother.ObterCalzone();
 
             contexto.Clientes.Add(clienteFisico);
             contexto.Clientes.Add(clienteJuridico);
+            contexto.Produtos.Add(produto);
 
             contexto.SaveChanges();
 

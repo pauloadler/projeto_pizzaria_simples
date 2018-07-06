@@ -5,7 +5,7 @@ namespace Pizzaria.Domain.Features.Produtos
 {
     public class Produto
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Descricao { get; set; }
         public TipoProdutoEnum Tipo { get; set; }
         public TamanhoProdutoEnum Tamanho { get; set; }

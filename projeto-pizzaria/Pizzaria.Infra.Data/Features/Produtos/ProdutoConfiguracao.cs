@@ -18,7 +18,6 @@ namespace Pizzaria.Infra.Data.Features.Produtos
             Property(p => p.Descricao).HasColumnType("VARCHAR").HasMaxLength(50);
             Property(p => p.Tipo).HasColumnType("INT");
             Property(p => p.Tamanho).HasColumnType("INT");
-            Property(p => p.Valor).HasColumnType("NUMERIC(8,3)");
         }
 
     }
