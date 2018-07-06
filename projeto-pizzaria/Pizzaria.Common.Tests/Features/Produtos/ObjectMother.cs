@@ -1,0 +1,98 @@
+﻿using Pizzaria.Domain.Enums;
+using Pizzaria.Domain.Features.Produtos;
+
+namespace Pizzaria.Common.Tests.Base
+{
+    public partial class ObjectMother
+    {
+        public static Produto ObterPizzaPequenaDeCalabresa()
+        {
+            return new Produto
+            {
+                Descricao = "Pizza de Calabresa",
+                Valor = 60,
+                Tamanho = TamanhoProdutoEnum.Pequena,
+                Tipo = TipoProdutoEnum.Pizza
+            };
+        }
+
+        public static Produto ObterPizzaMediaDeCalabresa()
+        {
+            return new Produto
+            {
+                Descricao = "Pizza de Calabresa",
+                Valor = 69.80,
+                Tamanho = TamanhoProdutoEnum.Pequena,
+                Tipo = TipoProdutoEnum.Pizza
+            };
+        }
+
+        public static Produto ObterPizzaPequenaDeCoracao()
+        {
+            return new Produto
+            {
+                Descricao = "Pizza de Coração",
+                Valor = 70,
+                Tamanho = TamanhoProdutoEnum.Pequena,
+                Tipo = TipoProdutoEnum.Pizza
+            };
+        }
+
+        public static Produto ObterPizzaMediaDeMussarela()
+        {
+            return new Produto
+            {
+                Descricao = "Pizza de Mussarela",
+                Valor = 75,
+                Tamanho = TamanhoProdutoEnum.Media,
+                Tipo = TipoProdutoEnum.Pizza
+            };
+        }
+
+
+        public static Produto ObterBordaPequenaCatupiry()
+        {
+            return new Produto
+            {
+                Descricao = "Borda de Catupiry",
+                Valor = 1.25,
+                Tamanho = TamanhoProdutoEnum.Pequena,
+                Tipo = TipoProdutoEnum.Borda
+            };
+        }
+
+
+        public static Produto ObterBordaMediaCheddar()
+        {
+            return new Produto
+            {
+                Descricao = "Borda de Cheddar",
+                Valor = 1.50,
+                Tamanho = TamanhoProdutoEnum.Media,
+                Tipo = TipoProdutoEnum.Borda
+            };
+        }
+
+        public static Produto ObterCalzone()
+        {
+            return new Produto
+            {
+                Descricao = "Calzone",
+                Valor = 15.00,
+                Tamanho = TamanhoProdutoEnum.Padrao,
+                Tipo = TipoProdutoEnum.Calzone
+            };
+        }
+
+        public static Produto ObterBebida()
+        {
+            return new Produto
+            {
+                Descricao = "Coca Cola 2L",
+                Valor = 8.00,
+                Tamanho = TamanhoProdutoEnum.Padrao,
+                Tipo = TipoProdutoEnum.Bebida
+            };
+        }
+    }
+}

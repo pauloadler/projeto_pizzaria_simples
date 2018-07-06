@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pizzaria.Domain.Features.Enderecos.Endereco">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAACIEAAAAgACAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Features\Enderecos\Endereco.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pizzaria.Domain.Features.Produtos.Produto">
+    <Position X="11.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Produtos\Produto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pizzaria.Domain.Features.Clientes.Cliente">
+    <Position X="3.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAQAAAAAgAAAAAAAAAAAAAAAAAAAEAEAA=</HashCode>
+      <FileName>Features\Clientes\Cliente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Endereco" />
+      <Property Name="TipoCliente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Pizzaria.Domain.Features.Pedidos.Pedido">
+    <Position X="6.75" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAAAAIAACACAAAAAEAgAEBAAgAAAAAAAAwA=</HashCode>
+      <FileName>Features\Pedidos\Pedido.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FormaPagamento" />
+      <Property Name="StatusPedido" />
+      <Property Name="Cliente" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ItensPedido" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Pizzaria.Domain.PropriedadeProduto">
+    <Position X="13.75" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Features\PropriedadeProduto\PropriedadeProdutos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Produto" />
+      <Property Name="Tamanho" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Pizzaria.Domain.Features.ItensPedido.ItemPedido">
+    <Position X="11.25" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\ItensPedido\ItemPedido.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProdutoSelecionado" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="Pizzaria.Domain.Enums.FormaPagamentoEnum" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAACAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\FormaPagamentoEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pizzaria.Domain.Enums.TamanhoProdutoEnum">
+    <Position X="9.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAQAAAACBAQAAAAAAAA=</HashCode>
+      <FileName>Enums\TamanhoProdutoEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pizzaria.Domain.Enums.TipoClienteEnum">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Enums\TipoClienteEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pizzaria.Domain.Enums.StatusPedidoEnum" Collapsed="true">
+    <Position X="6.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAQAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Enums\StatusPedidoEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
