@@ -8,78 +8,75 @@ namespace Pizzaria.Infra.CNPJs
 {
     public class Cnpj
     {
-        private readonly string INVALID_PATTER = "00000000000000";
-        private readonly int NUMBER_DIGITIS = 14;
+        private readonly string PADRAO_INVALIDO = "00000000000000";
+        private readonly int NUMERO_DIGITOS = 14;
 
-        public string Value { get; set; }
-        public string FormattedValue { get => SetMask(Value); }
+        public string Valor { get; set; }
+        public string ValorFormatado { get => SetarMascara(Valor); }
 
-        public virtual void Validate()
+        public virtual void Validar()
         {
-            RemoveMask(Value);
+            RemoverMascara(Valor);
 
-            if (string.IsNullOrEmpty(Value))
-                throw new CnpjValueNullOrEmptyException();
+            if (string.IsNullOrEmpty(Valor))
+                throw new CnpjValorNuloOuVazioExcecao();
 
-            if (Value.Length < NUMBER_DIGITIS)
-                throw new CnpjValueLessThanFourteenException();
+            if (Valor.Length < NUMERO_DIGITOS)
+                throw new CnpjValorMenorQueCatorzeExcecao();
 
-            if (Value.Length > NUMBER_DIGITIS)
-                throw new CnpjValueOverFlowException();
+            if (Valor.Length > NUMERO_DIGITOS)
+                throw new CnpjValorOverFlowExcecao();
 
-            if (INVALID_PATTER.Equals(Value))
-                throw new CnpjValueEqualToZeroException();
+            if (PADRAO_INVALIDO.Equals(Valor))
+                throw new CnpjValorIgualZeroExcecao();
 
-            if (!IsValid())
-                throw new CnpjInvalidValueException();
-
+            if (!Valido())
+                throw new CnpjValorInvalidoExcecao();
         }
 
-
-        private bool IsValid()
+        private bool Valido()
         {
-            int[] digits, sum, result;
+            int[] digitos, soma, resultado;
             int nrDig;
             string ftmt;
             bool[] CNPJOk;
 
             ftmt = "6543298765432";
-            digits = new int[NUMBER_DIGITIS];
-            sum = new int[2];
-            sum[0] = 0;
-            sum[1] = 0;
-            result = new int[2];
-            result[0] = 0;
-            result[1] = 0;
+            digitos = new int[NUMERO_DIGITOS];
+            soma = new int[2];
+            soma[0] = 0;
+            soma[1] = 0;
+            resultado = new int[2];
+            resultado[0] = 0;
+            resultado[1] = 0;
             CNPJOk = new bool[2];
             CNPJOk[0] = false;
             CNPJOk[1] = false;
 
             try
             {
-                for (nrDig = 0; nrDig < NUMBER_DIGITIS; nrDig++)
+                for (nrDig = 0; nrDig < NUMERO_DIGITOS; nrDig++)
                 {
-                    digits[nrDig] = int.Parse(
-                     Value.Substring(nrDig, 1));
+                    digitos[nrDig] = int.Parse(
+                     Valor.Substring(nrDig, 1));
                     if (nrDig <= 11)
-                        sum[0] += (digits[nrDig] * int.Parse(ftmt.Substring(nrDig + 1, 1)));
+                        soma[0] += (digitos[nrDig] * int.Parse(ftmt.Substring(nrDig + 1, 1)));
                     if (nrDig <= 12)
-                        sum[1] += (digits[nrDig] * int.Parse(ftmt.Substring(nrDig, 1)));
+                        soma[1] += (digitos[nrDig] * int.Parse(ftmt.Substring(nrDig, 1)));
                 }
 
                 for (nrDig = 0; nrDig < 2; nrDig++)
                 {
-                    result[nrDig] = (sum[nrDig] % 11);
-                    if ((result[nrDig] == 0) || (result[nrDig] == 1))
-                        CNPJOk[nrDig] = (digits[12 + nrDig] == 0);
+                    resultado[nrDig] = (soma[nrDig] % 11);
+                    if ((resultado[nrDig] == 0) || (resultado[nrDig] == 1))
+                        CNPJOk[nrDig] = (digitos[12 + nrDig] == 0);
 
                     else
-                        CNPJOk[nrDig] = (digits[12 + nrDig] == (11 - result[nrDig]));
+                        CNPJOk[nrDig] = (digitos[12 + nrDig] == (11 - resultado[nrDig]));
 
                 }
 
                 return (CNPJOk[0] && CNPJOk[1]);
-
             }
             catch
             {
@@ -87,18 +84,18 @@ namespace Pizzaria.Infra.CNPJs
             }
         }
 
-        private void RemoveMask(string value)
+        private void RemoverMascara(string valor)
         {
-            value = value.Replace(".", "");
-            value = value.Replace("/", "");
-            value = value.Replace("-", "");
+            valor = valor.Replace(".", "");
+            valor = valor.Replace("/", "");
+            valor = valor.Replace("-", "");
     
-            Value = value;
+            Valor = valor;
         }
 
-        private string SetMask(string value)
+        private string SetarMascara(string valor)
         {
-           return Convert.ToUInt64(Value).ToString(@"00\.000\.000\/0000\-00");
+           return Convert.ToUInt64(Valor).ToString(@"00\.000\.000\/0000\-00");
         }
     }
 }

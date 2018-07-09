@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Infra.CPFs
 {
-    public class CpfException : Exception
+    public class CpfValorIncorretoExcecao : CpfExcecao
     {
-        public CpfException(String message) : base(message)
+        public CpfValorIncorretoExcecao() : base("CPF não pode conter Letras e caracteres especiais!")
         {
-        
         }
     }
 }

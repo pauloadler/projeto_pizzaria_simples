@@ -46,7 +46,6 @@
     <Compile Include="Features\Clientes\ClienteNomeNuloOuVazioExcecao.cs" />
     <Compile Include="Features\Clientes\ClienteNumeroDocumentoNuloOuVazioExcecao.cs" />
     <Compile Include="Features\Clientes\ClienteTelefoneNuloOuVazioExcecao.cs" />
-    <Compile Include="Features\Clientes\ClienteTipoClienteInvalidoExcecao.cs" />
     <Compile Include="Features\Clientes\IClienteRepositorio.cs" />
     <Compile Include="Features\Enderecos\Endereco.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />

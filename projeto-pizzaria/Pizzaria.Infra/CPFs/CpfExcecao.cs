@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Infra.CPFs
 {
-    public class CpfValueEqualToZeroException : CpfException
+    public class CpfExcecao : Exception
     {
-        public CpfValueEqualToZeroException() : base("O CPF não pode ter o valor igual a 0!")
+        public CpfExcecao(String message) : base(message)
         {
-
+        
         }
     }
 }

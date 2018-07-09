@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Infra.CNPJs
 {
-    public class CnpjValueEqualToZeroException : CnpjException
+    public class CnpjExcecao : Exception
     {
-        public CnpjValueEqualToZeroException() : base("O CNPJ não pode ter o valor igual a 0!")
+        public CnpjExcecao(string message) : base(message)
         {
 
-        }
+        } 
     }
 }

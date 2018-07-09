@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Infra.CPFs
 {
-    public class CpfValueOverFlowException : CpfException
+    public class CpfValorIgualZeroExcecao : CpfExcecao
     {
-        public CpfValueOverFlowException() : base("O CPF não pode ser maior que 11 digitos!")
+        public CpfValorIgualZeroExcecao() : base("O CPF não pode ter o valor igual a 0!")
         {
+
         }
     }
 }
