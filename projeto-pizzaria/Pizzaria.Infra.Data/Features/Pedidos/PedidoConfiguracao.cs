@@ -1,4 +1,5 @@
-﻿using Pizzaria.Domain.Features.Pedidos;
+﻿using Pizzaria.Domain.Features.Clientes;
+using Pizzaria.Domain.Features.Pedidos;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -18,11 +19,13 @@ namespace Pizzaria.Infra.Data.Features.Pedidos
             Property(c => c.Setor).HasColumnType("VARCHAR").HasMaxLength(50);
             Property(c => c.Responsavel).HasColumnType("VARCHAR").HasMaxLength(50);
             Property(c => c.FormaPagamento).HasColumnType("INT");
-            Property(c => c.EmitirNFe).HasColumnType("Bit");
+            Property(c => c.EmitirNFe).HasColumnType("BIT");
             Property(c => c.Observacao).HasColumnType("VARCHAR").HasMaxLength(200);
             Property(c => c.Data).HasColumnType("DATETIME");
             Property(c => c.StatusPedido).HasColumnType("INT");
-            Property(c => c.ClienteId).HasColumnType("INT");
+
+            // one to many Pedido - Cliente
+            HasRequired(p => p.Cliente).WithMany().HasForeignKey(p => p.ClienteId);
         }
 
     }

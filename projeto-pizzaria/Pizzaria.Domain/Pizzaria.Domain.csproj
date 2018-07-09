@@ -46,7 +46,6 @@
     <Compile Include="Features\Clientes\ClienteNomeNuloOuVazioExcecao.cs" />
     <Compile Include="Features\Clientes\ClienteNumeroDocumentoNuloOuVazioExcecao.cs" />
     <Compile Include="Features\Clientes\ClienteTelefoneNuloOuVazioExcecao.cs" />
-    <Compile Include="Features\Clientes\ClienteTipoClienteInvalidoExcecao.cs" />
     <Compile Include="Features\Clientes\IClienteRepositorio.cs" />
     <Compile Include="Features\Enderecos\Endereco.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
@@ -60,11 +59,17 @@
     <Compile Include="Features\Enderecos\EnderecoLogradouroNuloOuVazioExcecao.cs" />
     <Compile Include="Features\Enderecos\EnderecoNumeroInvalidoExcecao.cs" />
     <Compile Include="Features\Enderecos\EnderecoUFNuloOuVazioExcecao.cs" />
+    <Compile Include="Features\ItensPedido\IItemPedidoRepositorio.cs" />
     <Compile Include="Features\ItensPedido\ItemPedido.cs" />
-    <Compile Include="Features\ItensPedido\ItemPedidoProdutoNuloOuVazioExcessao.cs" />
-    <Compile Include="Features\ItensPedido\ItemPedidoQuantidadeZeroExcessao.cs" />
+    <Compile Include="Features\ItensPedido\ItemPedidoPrimeiroProdutoNuloOuVazioExcecao.cs" />
+    <Compile Include="Features\ItensPedido\ItemPedidoAdicionalInvalidoExcecao.cs" />
+    <Compile Include="Features\ItensPedido\ItemPedidoPedidoNullExcecao.cs" />
+    <Compile Include="Features\ItensPedido\ItemPedidoQuantidadeZeroExcecao.cs" />
     <Compile Include="Features\Pedidos\IPedidoRepositorio.cs" />
     <Compile Include="Features\Pedidos\Pedido.cs" />
+    <Compile Include="Features\Pedidos\PedidoResponsavelNuloOuVazioExcecao.cs" />
+    <Compile Include="Features\Pedidos\PedidoSetorNuloOuVazioExcecao.cs" />
+    <Compile Include="Features\Pedidos\PedidoDataMenorQueAtualExcecao .cs" />
     <Compile Include="Features\Pedidos\PedidoClienteNuloExcecao.cs" />
     <Compile Include="Features\Pedidos\PedidoItensPedidosVazioExcecao.cs" />
     <Compile Include="Features\Produtos\IProdutoRepositorio.cs" />

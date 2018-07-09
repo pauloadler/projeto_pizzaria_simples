@@ -1,5 +1,6 @@
 ﻿using Pizzaria.Domain.Enums;
 using Pizzaria.Domain.Features.Enderecos;
+using Pizzaria.Domain.Features.Pedidos;
 using Pizzaria.Infra.CNPJs;
 using Pizzaria.Infra.CPFs;
 using System;
@@ -11,17 +12,39 @@ namespace Pizzaria.Domain.Features.Clientes
 {
     public class Cliente
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string NumeroDocumento { get; set; }
         public virtual Endereco Endereco { get; set; }
         public TipoClienteEnum TipoCliente { get; set; }
+       
 
-        public void AdicionarDocumento(TipoClienteEnum TipoCliente, string numeroDocumento)
+        public virtual void Validar()
         {
-            // Cpf Cpf 
-            // Cnpj Cnpj 
+            if (string.IsNullOrEmpty(Nome))
+                throw new ClienteNomeNuloOuVazioExcecao();
+
+            if (string.IsNullOrEmpty(Telefone))
+                throw new ClienteTelefoneNuloOuVazioExcecao();
+
+            if (string.IsNullOrEmpty(NumeroDocumento))
+                throw new ClienteNumeroDocumentoNuloOuVazioExcecao();
+
+            if (Endereco == null)
+                throw new ClienteEnderecoNuloExcecao();
+
+            switch (TipoCliente)
+            {
+                case TipoClienteEnum.Fisico:
+                    Cpf cpf = new Cpf { Valor = NumeroDocumento };
+                    cpf.Validar();
+                    break;
+                case TipoClienteEnum.Juridico:
+                    Cnpj cnpj = new Cnpj { Valor = NumeroDocumento };
+                    cnpj.Validar();
+                    break;
+            }
         }
     }
 }

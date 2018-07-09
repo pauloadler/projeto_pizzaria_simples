@@ -41,7 +41,7 @@ namespace Pizzaria.Infra.Data.Tests.Features.Clientes
             //Cenário
             Cliente cliente = ObjectMother.ObterClienteTipoPessoaFisica(_endereco);
 
-            int id = 3;
+            int id = 4;
 
             //Ação
             Cliente resultado = _repositorio.Salvar(cliente);
@@ -57,7 +57,7 @@ namespace Pizzaria.Infra.Data.Tests.Features.Clientes
             //Cenário
             Cliente cliente = ObjectMother.ObterClienteTipoPessoaJuridica(_endereco);
 
-            int id = 3;
+            int id = 4;
 
             //Ação
             Cliente resultado = _repositorio.Salvar(cliente);
@@ -119,7 +119,7 @@ namespace Pizzaria.Infra.Data.Tests.Features.Clientes
         public void Clientes_InfraData_Buscar_todos_os_clientes()
         {
             //Cenário
-            int tamanhoLista = 2;
+            int tamanhoLista = 3;
 
             //Ação
             IList<Cliente> clientes = _repositorio.Listagem();

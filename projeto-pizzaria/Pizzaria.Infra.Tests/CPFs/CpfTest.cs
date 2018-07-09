@@ -10,108 +10,108 @@ namespace Pizzaria.Infra.Tests.CPF
     public class CpfTest
     {
         [Test]
-        public void Cpf_Infra_Validate_ShouldValidateWithSuccess()
+        public void CPFs_Infra_Validar_cpf_com_todos_os_campos_validos()
         {
             //Cenario
-            Cpf cpf = ObjectMother.GetCpf();
+            Cpf cpf = ObjectMother.ObterCpf();
 
             //Ação
-            Action actionExecute = cpf.Validate;
+            Action action = cpf.Validar;
 
             //Sáida
-            actionExecute.Should().NotThrow<Exception>();
+            action.Should().NotThrow<Exception>();
         }
 
         [Test]
-        public void Cpf_Infra_FormattedValue_ShouldFormattedValueWithSuccess()
+        public void CPFs_Infra_Formatar_valor_do_cpf()
         {
             //Cenario
-            Cpf cpf = ObjectMother.GetCpf();
+            Cpf cpf = ObjectMother.ObterCpf();
             string cnpjEsperado = "329.999.590-10";
 
             //Ação
-            string res = cpf.FormattedValue;
+            string res = cpf.ValorFormatado;
 
             //Sáida
             res.Should().Be(cnpjEsperado);
         }
 
         [Test]
-        public void Cpf_Infra_Validate_ShouldThrowValueNullOrEmptyException()
+        public void CPFs_Infra_Validar_cpf_com_valor_nulo_ou_vazio()
         {
             //Cenario
-            Cpf cpf = ObjectMother.GetCpfWithValueEmpty();
+            Cpf cpf = ObjectMother.ObterCpfComValorNuloOuVazio();
 
             //Ação
-            Action actionExecute = cpf.Validate;
+            Action action = cpf.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CpfValueNullOrEmptyException>();
+            action.Should().Throw<CpfValorNuloOuVazioExcecao>();
         }
 
         [Test]
-        public void Cpf_Infra_Validate_ShouldThrowValueLessThanElevenException()
+        public void CPFs_Infra_Validar_cpf_com_valor_menor_que_onze()
         {
             //Cenario
-            Cpf cpf = ObjectMother.GetCpfLessThanEleven();
+            Cpf cpf = ObjectMother.ObterCpfComValorMenorQueOnze();
 
             //Ação
-            Action actionExecute = cpf.Validate;
+            Action action = cpf.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CpfValueLessThanElevenException>();
+            action.Should().Throw<CpfValorMenorQueOnzeExcecao>();
         }
 
         [Test]
-        public void Cpf_Infra_Validate_ShouldThrowValueOverFlowException()
+        public void CPFs_Infra_Validar_cpf_com_valor_over_flow()
         {
             //Cenario
-            Cpf cpf = ObjectMother.GetCpfOverFlow();
+            Cpf cpf = ObjectMother.ObterCpfComValorOverFlow();
 
             //Ação
-            Action actionExecute = cpf.Validate;
+            Action action = cpf.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CpfValueOverFlowException>();
+            action.Should().Throw<CpfValorOverFlowExcecao>();
         }
 
         [Test]
-        public void Cpf_Infra_Validate_ShouldThrowValueEqualToZeroException()
+        public void CPFs_Infra_Validar_cpf_com_valor_igual_zero()
         {
             //Cenario
-            Cpf cpf = ObjectMother.GetCpfEqualToZero();
+            Cpf cpf = ObjectMother.ObterCpfComValorIgualZero();
 
             //Ação
-            Action actionExecute = cpf.Validate;
+            Action action = cpf.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CpfValueEqualToZeroException>();
+            action.Should().Throw<CpfValorIgualZeroExcecao>();
         }
 
         [Test]
-        public void Cpf_Infra_Validate_ShouldThrowInvalidValueException()
+        public void CPFs_Infra_Validar_cpf_com_valor_invalido()
         {
             //Cenario
-            Cpf cpf = ObjectMother.GetCpfInvalidValue();
+            Cpf cpf = ObjectMother.ObterCpfComValorInvalido();
 
             //Ação
-            Action actionExecute = cpf.Validate;
+            Action action = cpf.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CpfInvalidValueException>();
+            action.Should().Throw<CpfInvalidValueException>();
         }
 
         [Test]
-        public void Cpf_Infra_Validate_ShouldThrowIncorrectValueException()
+        public void CPFs_Infra_Validar_cpf_com_valor_incorreto()
         {
             //Cenario
-            Cpf cpf = ObjectMother.GetCpfIncorrectValue();
+            Cpf cpf = ObjectMother.ObterCpfComValorIncorreto();
 
             //Ação
-            Action actionExecute = cpf.Validate;
+            Action action = cpf.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CpfIncorrectValueException>();
+            action.Should().Throw<CpfValorIncorretoExcecao>();
         }
     }
 }

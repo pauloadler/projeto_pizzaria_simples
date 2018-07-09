@@ -8,52 +8,52 @@ namespace Pizzaria.Infra.CPFs
 {
     public class Cpf
     {
-        private readonly string INVALID_PATTER = "00000000000";
-        private readonly int NUMBER_DIGITIS = 11;
+        private readonly string PADRAO_INVALIDO = "00000000000";
+        private readonly int NUMERO_DIGITOS = 11;
 
-        public string Value { get; set; }
-        public string FormattedValue { get => SetMask(Value); }
+        public string Valor { get; set; }
+        public string ValorFormatado { get => SetarMascara(Valor); }
 
-        public virtual void Validate()
+        public virtual void Validar()
         {
-            RemoveMask(Value);
+            RemoverMascara(Valor);
 
-            if (string.IsNullOrEmpty(Value))
-                throw new CpfValueNullOrEmptyException();
+            if (string.IsNullOrEmpty(Valor))
+                throw new CpfValorNuloOuVazioExcecao();
 
-            if (Value.Length < NUMBER_DIGITIS)
-                throw new CpfValueLessThanElevenException();
+            if (Valor.Length < NUMERO_DIGITOS)
+                throw new CpfValorMenorQueOnzeExcecao();
 
-            if (Value.Length > NUMBER_DIGITIS)
-                throw new CpfValueOverFlowException();
+            if (Valor.Length > NUMERO_DIGITOS)
+                throw new CpfValorOverFlowExcecao();
 
-            if (INVALID_PATTER.Equals(Value))
-                throw new CpfValueEqualToZeroException();
+            if (PADRAO_INVALIDO.Equals(Valor))
+                throw new CpfValorIgualZeroExcecao();
 
             long x = 0;
-            if (!long.TryParse(Value, out x))
-                throw new CpfIncorrectValueException();
+            if (!long.TryParse(Valor, out x))
+                throw new CpfValorIncorretoExcecao();
 
-            if (!IsValid())
+            if (!Valido())
                 throw new CpfInvalidValueException();
 
 
         }
 
-        private bool IsValid()
+        private bool Valido() //EValido?
         {
             bool igual = true;
             for (int i = 1; i < 11 && igual; i++)
-                if (Value[i] != Value[0])
+                if (Valor[i] != Valor[0])
                     igual = false;
 
-            if (igual || Value == "12345678909")
+            if (igual || Valor == "12345678909")
                 return false;
 
             int[] numeros = new int[11];
             for (int i = 0; i < 11; i++)
                 numeros[i] = int.Parse(
-                Value[i].ToString());
+                Valor[i].ToString());
 
             int soma = 0;
             for (int i = 0; i < 9; i++)
@@ -86,17 +86,17 @@ namespace Pizzaria.Infra.CPFs
             return true;
         }
 
-        private void RemoveMask(string value)
+        private void RemoverMascara(string valor)
         {
-            value = value.Replace(".", "");
-            value = value.Replace("-", "");
+            valor = valor.Replace(".", "");
+            valor = valor.Replace("-", "");
 
-            Value = value;
+            Valor = valor;
         }
 
-        private string SetMask(string value)
+        private string SetarMascara(string valor)
         {
-            return Convert.ToUInt64(value).ToString(@"000\.000\.000\-00");
+            return Convert.ToUInt64(valor).ToString(@"000\.000\.000\-00");
         }
     }
 }

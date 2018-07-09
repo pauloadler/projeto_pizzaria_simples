@@ -10,123 +10,123 @@ namespace Pizzaria.Infra.Tests.CNPJs
     public class CnpjTest
     {
         [Test]
-        public void Cnpj_Infra_Validate_ShouldValidateWithSuccess()
+        public void CNPJs_Infra_Validar_cnpj_com_todos_os_campos_validos()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpj();
+            Cnpj cnpj = ObjectMother.ObterCnpj();
 
             //Ação
-            Action actionExecute = cnpj.Validate;
+            Action action = cnpj.Validar;
 
             //Sáida
-            actionExecute.Should().NotThrow<Exception>();
+            action.Should().NotThrow<Exception>();
         }
 
         [Test]
-        public void Cnpj_Infra_Validate_ShouldThrowValueNullOrEmptyException()
+        public void CNPJs_Infra_Validar_cnpj_com_valor_nulo_ou_vazio()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpjWithValueEmpty();
+            Cnpj cnpj = ObjectMother.ObterCnpjComValorNuloOuVazio();
 
             //Ação
-            Action actionExecute = cnpj.Validate;
+            Action action = cnpj.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CnpjValueNullOrEmptyException>();
+            action.Should().Throw<CnpjValorNuloOuVazioExcecao>();
         }
 
 
         [Test]
-        public void Cnpj_Infra_Validate_ShouldThrowInvalidValueException()
+        public void CNPJs_Infra_Validar_cnpj_com_valor_invalido()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpjInvalidValue();
+            Cnpj cnpj = ObjectMother.ObterCnpjComValorInvalido();
 
             //Ação
-            Action actionExecute = cnpj.Validate;
+            Action action = cnpj.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CnpjInvalidValueException>();
+            action.Should().Throw<CnpjValorInvalidoExcecao>();
         }
 
         [Test]
-        public void Cnpj_Infra_Validate_ShouldThrowIncorrectValueException()
+        public void CNPJs_Infra_Validar_cnpj_com_valor_incorreto()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpjIncorrectValue();
+            Cnpj cnpj = ObjectMother.ObterCnpjComValorIncorreto();
 
             //Ação
-            Action actionExecute = cnpj.Validate;
+            Action action = cnpj.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CnpjInvalidValueException>();
+            action.Should().Throw<CnpjValorInvalidoExcecao>();
         }
 
         [Test]
-        public void Cnpj_Infra_Validate_ShouldThrowValueLessThanFourteenException()
+        public void CNPJs_Infra_Validar_cnpj_com_valor_menor_que_catorze()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpjLessThanFourTeen();
+            Cnpj cnpj = ObjectMother.ObterCnpjComValorMenorQueCatorze();
 
             //Ação
-            Action actionExecute = cnpj.Validate;
+            Action action = cnpj.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CnpjValueLessThanFourteenException>();
+            action.Should().Throw<CnpjValorMenorQueCatorzeExcecao>();
         }
 
         [Test]
-        public void Cnpj_Infra_Validate_ShouldThrowValueEqualToZeroException()
+        public void CNPJs_Infra_Validar_cnpj_com_valor_igual_zero()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpjEqualToZero();
+            Cnpj cnpj = ObjectMother.ObterCnjComValorIgualZero();
 
             //Ação
-            Action actionExecute = cnpj.Validate;
+            Action action = cnpj.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CnpjValueEqualToZeroException>();
+            action.Should().Throw<CnpjValorIgualZeroExcecao>();
         }
 
         [Test]
-        public void Cnp_Infra_Validate_ShouldThrowValueOverFlowException()
+        public void CNPJs_Infra_Validar_cnpj_com_valor_over_flow()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpjOverFlow();
+            Cnpj cnpj = ObjectMother.ObterCnpjOverFlow();
 
             //Ação
-            Action actionExecute = cnpj.Validate;
+            Action action = cnpj.Validar;
 
             //Sáida
-            actionExecute.Should().Throw<CnpjValueOverFlowException>();
+            action.Should().Throw<CnpjValorOverFlowExcecao>();
         }
 
         [Test]
-        public void Cnpj_Infra_RemoveMask_ShouldRemoveMaskWithSuccess()
+        public void CNPJs_Infra_Remover_mascara_do_cnpj()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpj();
-            string cnpjExpected = "08671696000190";
+            Cnpj cnpj = ObjectMother.ObterCnpj();
+            string cnpjEsperado = "08671696000190";
 
             //Ação
-            cnpj.Validate();
+            cnpj.Validar();
 
             //Sáida
-            cnpj.Value.Should().Be(cnpjExpected);
+            cnpj.Valor.Should().Be(cnpjEsperado);
         }
 
         [Test]
-        public void Cnpj_Infra_FormattedValue_ShouldFormattedValueWithSuccess()
+        public void CNPJs_Infra_Formatar_valor_do_cnpj()
         {
             //Cenario
-            Cnpj cnpj = ObjectMother.GetCnpj();
-            string cnpjExpected = "08.671.696/0001-90";
+            Cnpj cnpj = ObjectMother.ObterCnpj();
+            string cnpjEsperado = "08.671.696/0001-90";
 
             //Ação
-            string res = cnpj.FormattedValue;
+            string res = cnpj.ValorFormatado;
 
             //Sáida
-            res.Should().Be(cnpjExpected);
+            res.Should().Be(cnpjEsperado);
         }
     }
 }
