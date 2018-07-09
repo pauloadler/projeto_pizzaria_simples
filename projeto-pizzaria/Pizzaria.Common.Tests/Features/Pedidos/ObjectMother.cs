@@ -9,7 +9,7 @@ namespace Pizzaria.Common.Tests.Base
 {
     public partial class ObjectMother
     {
-        public static Pedido GetPedidoSemUmaListaItens(Cliente cliente)
+        public static Pedido ObterPedidoSemUmaListaItens(Cliente cliente)
         {
             return new Pedido()
             {
@@ -23,7 +23,7 @@ namespace Pizzaria.Common.Tests.Base
             };
         }
 
-        public static Pedido GetPedidoComUmaListaItens(Cliente cliente, List<ItemPedido> itensPedidos)
+        public static Pedido ObterPedidoComUmaListaItens(Cliente cliente, List<ItemPedido> itensPedidos)
         {
             return new Pedido
             {
@@ -38,7 +38,7 @@ namespace Pizzaria.Common.Tests.Base
             };
         }
 
-        public static Pedido GetPedidoComClienteNulo(List<ItemPedido> itensPedidos)
+        public static Pedido ObterPedidoComClienteNulo(List<ItemPedido> itensPedidos)
         {
             return new Pedido
             {
@@ -52,7 +52,7 @@ namespace Pizzaria.Common.Tests.Base
             };
         }
 
-       public static Pedido GetPedidoDataMenorQueAtual(Cliente cliente, List<ItemPedido> itensPedidos)
+       public static Pedido ObterPedidoDataMenorQueAtual(Cliente cliente, List<ItemPedido> itensPedidos)
         {
             return new Pedido
             {
@@ -66,7 +66,7 @@ namespace Pizzaria.Common.Tests.Base
             };
         }
 
-        public static Pedido GetPedidoSetorNuloOuVazio(Cliente cliente, List<ItemPedido> itensPedidos)
+        public static Pedido ObterPedidoSetorNuloOuVazio(Cliente cliente, List<ItemPedido> itensPedidos)
         {
             return new Pedido
             {
@@ -80,7 +80,7 @@ namespace Pizzaria.Common.Tests.Base
             };
         }
 
-        public static Pedido GetPedidoResponsavelNuloOuVazio(Cliente cliente, List<ItemPedido> itensPedidos)
+        public static Pedido ObterPedidoResponsavelNuloOuVazio(Cliente cliente, List<ItemPedido> itensPedidos)
         {
             return new Pedido
             {

@@ -29,7 +29,7 @@ namespace Pizzaria.Common.Tests.Base
             Produto calzone = ObjectMother.ObterCalzone();
             Produto pizzaMediaDeCalabresa = ObjectMother.ObterPizzaMediaDeCalabresa();
 
-            Pedido pedido = ObjectMother.GetPedidoSemUmaListaItens(clienteComPedido);
+            Pedido pedido = ObjectMother.ObterPedidoSemUmaListaItens(clienteComPedido);
             pedido.AdicionarPizza(1, pizzaMediaDeCalabresa);
 
             contexto.Clientes.Add(clienteFisico);

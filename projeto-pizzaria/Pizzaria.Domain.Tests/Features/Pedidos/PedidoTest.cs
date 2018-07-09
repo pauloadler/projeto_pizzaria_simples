@@ -53,7 +53,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_calcular_valor_pedido_com_1_pizza_pequena_com_1_unico_sabor()
         {
             //Arrange
-            pedido = ObjectMother.GetPedidoSemUmaListaItens(pessoaFake.Object);
+            pedido = ObjectMother.ObterPedidoSemUmaListaItens(pessoaFake.Object);
 
             int quantidade = 1;
             double valorEsperado = 60;
@@ -72,7 +72,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_calcular_valor_pedido_com_1_pizza_pequena_com_2_sabores_de_valores_diferentes()
         {
             //Arrange
-            pedido = ObjectMother.GetPedidoSemUmaListaItens(pessoaFake.Object);
+            pedido = ObjectMother.ObterPedidoSemUmaListaItens(pessoaFake.Object);
 
             int quantidade = 1;
             double valorEsperado = 70;
@@ -91,7 +91,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_calcular_valor_pedido_com_2_pizzas_pequena_com_1_sabor_cada()
         {
             //Arrange
-            pedido = ObjectMother.GetPedidoSemUmaListaItens(pessoaFake.Object);
+            pedido = ObjectMother.ObterPedidoSemUmaListaItens(pessoaFake.Object);
 
             int quantidade = 1;
             double valorEsperado = 130;
@@ -111,7 +111,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_calcular_valor_pedido_com_1_pizza_pequena_com_1_unico_sabor_com_borda()
         {
             //Arrange
-            pedido = ObjectMother.GetPedidoSemUmaListaItens(pessoaFake.Object);
+            pedido = ObjectMother.ObterPedidoSemUmaListaItens(pessoaFake.Object);
 
             int quantidade = 1;
             double valorEsperado = 61.25;
@@ -130,7 +130,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_calcular_valor_pedido_com_1_pizza_pequena_com_2_sabores_com_borda_catupiry_e_1_pizza_media_com_2_sabores_com_borda_cheedar()
         {
             //Arrange
-            pedido = ObjectMother.GetPedidoSemUmaListaItens(pessoaFake.Object);
+            pedido = ObjectMother.ObterPedidoSemUmaListaItens(pessoaFake.Object);
             Produto pizzaMediaCalabresa = ObjectMother.ObterPizzaMediaDeCalabresa();
           
             int quantidade = 1;
@@ -151,7 +151,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_calcular_valor_pedido_com_1_pizza_pequena_com_1_calzone()
         {
             //Arrange
-            pedido = ObjectMother.GetPedidoSemUmaListaItens(pessoaFake.Object);
+            pedido = ObjectMother.ObterPedidoSemUmaListaItens(pessoaFake.Object);
             Produto calzone = ObjectMother.ObterCalzone();
 
             int quantidadeCalzone = 1;
@@ -173,7 +173,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_calcular_valor_pedido_com_1_pizza_pequena_com_1_bebida()
         {
             //Arrange
-            pedido = ObjectMother.GetPedidoSemUmaListaItens(pessoaFake.Object);
+            pedido = ObjectMother.ObterPedidoSemUmaListaItens(pessoaFake.Object);
             Produto bebida = ObjectMother.ObterBebida();
             
             int quantidadeBebida = 1;
@@ -194,7 +194,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_validar_o_pedido()
         {
             //Arrange
-            Pedido pedido = ObjectMother.GetPedidoComUmaListaItens(pessoaFake.Object, itensPedidos);
+            Pedido pedido = ObjectMother.ObterPedidoComUmaListaItens(pessoaFake.Object, itensPedidos);
 
             //Action
             Action acao = pedido.Validar;
@@ -207,7 +207,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_validar_o_pedido_com_o_cliente_nulo()
         {
             //Arrange
-            Pedido pedido = ObjectMother.GetPedidoComClienteNulo(itensPedidos);
+            Pedido pedido = ObjectMother.ObterPedidoComClienteNulo(itensPedidos);
 
             //Action
             Action acao = pedido.Validar;
@@ -220,7 +220,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_validar_o_pedido_com_data_menor_que_atual()
         {
             //Arrange
-            Pedido pedido = ObjectMother.GetPedidoDataMenorQueAtual(pessoaFake.Object, itensPedidos);
+            Pedido pedido = ObjectMother.ObterPedidoDataMenorQueAtual(pessoaFake.Object, itensPedidos);
 
             //Action
             Action acao = pedido.Validar;
@@ -234,7 +234,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_validar_o_pedido_com_lista_de_itens_vazia()
         {
             //Arrange
-            Pedido pedido = ObjectMother.GetPedidoSemUmaListaItens(pessoaFake.Object);
+            Pedido pedido = ObjectMother.ObterPedidoSemUmaListaItens(pessoaFake.Object);
 
             //Action
             Action acao = pedido.Validar;
@@ -247,7 +247,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_validar_o_pedido_com_setor_nulo_ou_vazio()
         {
             //Arrange
-            Pedido pedido = ObjectMother.GetPedidoSetorNuloOuVazio(empresaFake.Object, itensPedidos);
+            Pedido pedido = ObjectMother.ObterPedidoSetorNuloOuVazio(empresaFake.Object, itensPedidos);
 
             //Action
             Action acao = pedido.Validar;
@@ -260,7 +260,7 @@ namespace Pizzaria.Domain.Tests.Features.Pedidos
         public void Pedidos_Domain_Deve_validar_o_pedido_com_responsavel_nulo_ou_vazio()
         {
             //Arrange
-            Pedido pedido = ObjectMother.GetPedidoResponsavelNuloOuVazio(empresaFake.Object, itensPedidos);
+            Pedido pedido = ObjectMother.ObterPedidoResponsavelNuloOuVazio(empresaFake.Object, itensPedidos);
 
             //Action
             Action acao = pedido.Validar;

@@ -28,8 +28,8 @@ namespace Pizzaria.Infra.Data.Tests.Features.Pedidos
         [SetUp]
         public void Inicializacao()
         {
-            _contexto = new DataContext();
             Database.SetInitializer(new CriarBaseDeDados());
+            _contexto = new DataContext();
             _contexto.Database.Initialize(true);
 
             _repositorio = new PedidoSQLRepositorio(_contexto);
@@ -38,13 +38,14 @@ namespace Pizzaria.Infra.Data.Tests.Features.Pedidos
             cliente.Id = 1;
 
             calzone = ObjectMother.ObterCalzone();
+            calzone.Id = 1;
         }
 
         [Test]
         public void Pedidos_InfraData_Deve_salvar_um_pedido()
         {
             //Cenário
-            Pedido pedido = ObjectMother.GetPedidoSemUmaListaItens(cliente);
+            Pedido pedido = ObjectMother.ObterPedidoSemUmaListaItens(cliente);
 
             long idExperado = 2;
             int quantidade = 3;

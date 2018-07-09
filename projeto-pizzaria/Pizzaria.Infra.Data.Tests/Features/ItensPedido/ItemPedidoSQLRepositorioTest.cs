@@ -23,8 +23,8 @@ namespace Pizzaria.Infra.Data.Tests.Features.ItemsPedido
         [SetUp]
         public void Inicializacao()
         {
-            _contexto = new DataContext();
             Database.SetInitializer(new CriarBaseDeDados());
+            _contexto = new DataContext();
             _contexto.Database.Initialize(true);
 
             _repositorio = new ItemPedidoSQLRepositorio(_contexto);
