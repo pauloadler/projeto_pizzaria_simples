@@ -34,7 +34,7 @@ namespace Pizzaria.Infra.Data.Tests.Features.Produtos
         public void Produto_InfraData_Salvar_Pizza_Pequena_De_Calabresa()
         {
             //Cenário
-            long idExperado = 2;
+            long idExperado = 3;
             Produto produto = ObjectMother.ObterPizzaPequenaDeCalabresa();
 
             //Ação
@@ -53,7 +53,7 @@ namespace Pizzaria.Infra.Data.Tests.Features.Produtos
 
             //Verifica
             produtos.Should().NotBeNull();
-            produtos.Should().HaveCount(1);
+            produtos.Should().HaveCount(2);
         }
 
         [Test]
