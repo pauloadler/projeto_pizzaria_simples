@@ -1,5 +1,4 @@
 ﻿using Pizzaria.Domain.Enums;
-using System.Collections.Generic;
 
 namespace Pizzaria.Domain.Features.Produtos
 {
@@ -10,5 +9,18 @@ namespace Pizzaria.Domain.Features.Produtos
         public TipoProdutoEnum Tipo { get; set; }
         public TamanhoProdutoEnum Tamanho { get; set; }
         public double Valor { get; set; }
+
+        public virtual void Validar()
+        {
+            if (string.IsNullOrEmpty(Descricao))
+            {
+                throw new ProdutoDescricaoNulaOuVaziaExcecao();
+            }
+
+            if (Valor == 0 || Valor < 0)
+            {
+                throw new ProdutoValorNegativoOuZeradoExcecao();
+            }
+        }
     }
 }

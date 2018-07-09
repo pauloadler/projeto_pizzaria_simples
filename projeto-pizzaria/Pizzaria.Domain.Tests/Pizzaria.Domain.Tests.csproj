@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Features\Enderecos\EnderecoTest.cs" />
     <Compile Include="Features\Pedidos\PedidoTest.cs" />
+    <Compile Include="Features\Produtos\ProdutoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

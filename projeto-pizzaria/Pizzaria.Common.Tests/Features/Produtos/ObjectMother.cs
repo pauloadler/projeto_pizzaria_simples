@@ -16,6 +16,39 @@ namespace Pizzaria.Common.Tests.Base
             };
         }
 
+        public static Produto ObterProdutoSemDescricao()
+        {
+            return new Produto
+            {
+                Descricao = "",
+                Valor = 69.80,
+                Tamanho = TamanhoProdutoEnum.Pequena,
+                Tipo = TipoProdutoEnum.Pizza
+            };
+        }
+
+        public static Produto ObterProdutoComValorNegativo()
+        {
+            return new Produto
+            {
+                Descricao = "Teste",
+                Valor = -10,
+                Tamanho = TamanhoProdutoEnum.Pequena,
+                Tipo = TipoProdutoEnum.Pizza
+            };
+        }
+
+        public static Produto ObterProdutoComValorZerado()
+        {
+            return new Produto
+            {
+                Descricao = "Teste",
+                Valor = 0,
+                Tamanho = TamanhoProdutoEnum.Pequena,
+                Tipo = TipoProdutoEnum.Pizza
+            };
+        }
+
         public static Produto ObterPizzaMediaDeCalabresa()
         {
             return new Produto
