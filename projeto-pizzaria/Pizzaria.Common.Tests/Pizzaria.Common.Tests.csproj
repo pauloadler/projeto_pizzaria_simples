@@ -52,6 +52,7 @@
     <Compile Include="Features\CNPJs\ObjectMother.cs" />
     <Compile Include="Features\CPFs\ObjectMother.cs" />
     <Compile Include="Features\Enderecos\ObjectMother.cs" />
+    <Compile Include="Features\ItensPedido\ObjectMother.cs" />
     <Compile Include="Features\Pedidos\ObjectMother.cs" />
     <Compile Include="Features\Produtos\ObjectMother.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

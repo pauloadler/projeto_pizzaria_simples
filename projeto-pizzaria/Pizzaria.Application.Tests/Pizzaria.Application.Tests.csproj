@@ -71,6 +71,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItensPedido\ItensPedidoServicoTest.cs" />
+    <Compile Include="Pedidos\PedidoServicoTest.cs" />
     <Compile Include="Features\Clientes\ClienteServicoTest.cs" />
     <Compile Include="Features\Pedidos\PedidoServicoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

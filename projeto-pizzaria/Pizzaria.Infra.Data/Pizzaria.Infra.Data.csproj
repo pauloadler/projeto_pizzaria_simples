@@ -50,6 +50,8 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="Features\Clientes\ClienteConfiguracao.cs" />
     <Compile Include="Features\Clientes\ClienteSQLRepositorio.cs" />
+    <Compile Include="Features\ItensPedido\ItemPedidoConfiguracao.cs" />
+    <Compile Include="Features\ItensPedido\ItemPedidoSQLRepositorio.cs" />
     <Compile Include="Features\Pedidos\PedidoConfiguracao.cs" />
     <Compile Include="Features\Pedidos\PedidoSQLRepositorio.cs" />
     <Compile Include="Features\Produtos\ProdutoConfiguracao.cs" />
