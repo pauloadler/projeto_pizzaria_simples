@@ -72,12 +72,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pedidos\PedidoServicoTest.cs" />
+    <Compile Include="Produtos\ProdutoServicoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Pizzaria.Application\Pizzaria.Application.csproj">
+      <Project>{9D79BBE5-6DBF-4F4F-9451-B2DDF7E046FC}</Project>
+      <Name>Pizzaria.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pizzaria.Domain\Pizzaria.Domain.csproj">
       <Project>{4B3EFFED-BC3C-4281-9614-C696F3FC670E}</Project>
       <Name>Pizzaria.Domain</Name>

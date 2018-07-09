@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Features\Pedidos\IPedidoServico.cs" />
     <Compile Include="Features\Pedidos\PedidoServico.cs" />
+    <Compile Include="Features\Produtos\IProdutoServico.cs" />
     <Compile Include="Features\Produtos\ProdutoServico.cs" />
     <Compile Include="IServico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

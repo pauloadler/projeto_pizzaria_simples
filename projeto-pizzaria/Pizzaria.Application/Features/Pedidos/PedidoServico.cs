@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Pizzaria.Domain.Features.Pedidos;
 
 namespace Pizzaria.Application.Features.Pedidos
@@ -11,7 +8,7 @@ namespace Pizzaria.Application.Features.Pedidos
     {
         private IPedidoRepositorio _repositorio;
 
-       public PedidoServico(IPedidoRepositorio repositorio)
+        public PedidoServico(IPedidoRepositorio repositorio)
         {
             _repositorio = repositorio;
         }
