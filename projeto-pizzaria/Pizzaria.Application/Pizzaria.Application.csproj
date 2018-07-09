@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Clientes\ClienteServico.cs" />
+    <Compile Include="Features\Clientes\IClienteServico.cs" />
     <Compile Include="Features\Pedidos\IPedidoServico.cs" />
     <Compile Include="Features\Pedidos\PedidoServico.cs" />
     <Compile Include="Features\Produtos\ProdutoServico.cs" />
@@ -52,5 +54,6 @@
       <Name>Pizzaria.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

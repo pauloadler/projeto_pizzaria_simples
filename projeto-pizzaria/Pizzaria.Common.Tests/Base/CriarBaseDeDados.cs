@@ -17,8 +17,8 @@ namespace Pizzaria.Common.Tests.Base
     {
         protected override void Seed(DataContext contexto)
         {
-            Cpf cpf = ObjectMother.GetCpf();
-            Cnpj cnpj = ObjectMother.GetCnpj();
+            Cpf cpf = ObjectMother.ObterCpf();
+            Cnpj cnpj = ObjectMother.ObterCnpj();
             Endereco endereco = ObjectMother.ObterEndereco();
             Cliente clienteFisico = ObjectMother.ObterClienteTipoPessoaFisica(endereco);
             Cliente clienteJuridico = ObjectMother.ObterClienteTipoPessoaJuridica(endereco);

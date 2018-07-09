@@ -9,60 +9,60 @@ namespace Pizzaria.Common.Tests.Base
 {
     public partial class ObjectMother
     {
-        public static Cnpj GetCnpj()
+        public static Cnpj ObterCnpj()
         {
             return new Cnpj()
             {
-                Value = "08671696000190",
+                Valor = "08671696000190",
             };
         }
 
-        public static Cnpj GetCnpjWithValueEmpty()
+        public static Cnpj ObterCnpjComValorNuloOuVazio()
         {
             return new Cnpj()
             {
-                Value = "",
+                Valor = "",
             };
         }
 
-        public static Cnpj GetCnpjInvalidValue()
+        public static Cnpj ObterCnpjComValorInvalido()
         {
             return new Cnpj()
             {
-                Value = "00000000000001",
+                Valor = "00000000000001",
             };
         }
 
-        public static Cnpj GetCnpjEqualToZero()
+        public static Cnpj ObterCnjComValorIgualZero()
         {
             return new Cnpj()
             {
-                Value = "00000000000000",
+                Valor = "00000000000000",
             };
         }
 
-        public static Cnpj GetCnpjLessThanFourTeen()
+        public static Cnpj ObterCnpjComValorMenorQueCatorze()
         {
             return new Cnpj()
             {
-                Value = "0000000000",
+                Valor = "0000000000",
             };
         }
 
-        public static Cnpj GetCnpjOverFlow()
+        public static Cnpj ObterCnpjOverFlow()
         {
             return new Cnpj()
             {
-                Value = "000000000000000",
+                Valor = "000000000000000",
             };
         }
 
 
-        public static Cnpj GetCnpjIncorrectValue()
+        public static Cnpj ObterCnpjComValorIncorreto()
         {
             return new Cnpj()
             {
-                Value = "BB000000000000",
+                Valor = "BB000000000000",
             };
         }
     }

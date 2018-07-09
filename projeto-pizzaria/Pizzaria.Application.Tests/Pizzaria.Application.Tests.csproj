@@ -71,13 +71,22 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pedidos\PedidoServicoTest.cs" />
+    <Compile Include="Features\Clientes\ClienteServicoTest.cs" />
+    <Compile Include="Features\Pedidos\PedidoServicoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Pizzaria.Application\Pizzaria.Application.csproj">
+      <Project>{9D79BBE5-6DBF-4F4F-9451-B2DDF7E046FC}</Project>
+      <Name>Pizzaria.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pizzaria.Common.Tests\Pizzaria.Common.Tests.csproj">
+      <Project>{613DDBCC-8C6E-41F5-A55D-4B8FC172D280}</Project>
+      <Name>Pizzaria.Common.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pizzaria.Domain\Pizzaria.Domain.csproj">
       <Project>{4B3EFFED-BC3C-4281-9614-C696F3FC670E}</Project>
       <Name>Pizzaria.Domain</Name>

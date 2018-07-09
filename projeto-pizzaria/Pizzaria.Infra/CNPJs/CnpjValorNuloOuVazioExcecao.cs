@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Infra.CNPJs
 {
-    public class CnpjValueNullOrEmptyException : CnpjException
+    public class CnpjValorNuloOuVazioExcecao : CnpjExcecao
     {
-        public CnpjValueNullOrEmptyException() : base("CNPJ não pode ser nulo!")
+        public CnpjValorNuloOuVazioExcecao() : base("CNPJ não pode ser nulo!")
         {
         }
     }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Infra.CNPJs
 {
-    public class CnpjValueOverFlowException : CnpjException
+    public class CnpjValorOverFlowExcecao : CnpjExcecao
     {
-        public CnpjValueOverFlowException() : base("O CNPJ não pode ser maior que 14 digitos!")
+        public CnpjValorOverFlowExcecao() : base("O CNPJ não pode ser maior que 14 digitos!")
         {
         }
     }

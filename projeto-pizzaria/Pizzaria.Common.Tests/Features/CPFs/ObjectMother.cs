@@ -9,68 +9,68 @@ namespace Pizzaria.Common.Tests.Base
 {
     public partial class ObjectMother
     {
-        public static Cpf GetCpf()
+        public static Cpf ObterCpf()
         {
             return new Cpf()
             {
-                Value = "32999959010"
+                Valor = "32999959010"
             };
         }
 
-        public static Cpf GetCpfWithValueFormat()
+        public static Cpf ObterCpfComValorFormatado()
         {
             return new Cpf()
             {
-                Value = "979.009.460-47"
+                Valor = "979.009.460-47"
             };
         }
 
-        public static Cpf GetCpfWithValueEmpty()
+        public static Cpf ObterCpfComValorNuloOuVazio()
         {
             return new Cpf()
             {
-                Value = "",
+                Valor = "",
             };
         }
 
-        public static Cpf GetCpfInvalidValue()
+        public static Cpf ObterCpfComValorInvalido()
         {
             return new Cpf()
             {
-                Value = "12345678909",
+                Valor = "12345678909",
             };
         }
 
-        public static Cpf GetCpfEqualToZero()
+        public static Cpf ObterCpfComValorIgualZero()
         {
             return new Cpf()
             {
-                Value = "00000000000",
+                Valor = "00000000000",
             };
         }
 
-        public static Cpf GetCpfLessThanEleven()
+        public static Cpf ObterCpfComValorMenorQueOnze()
         {
             return new Cpf()
             {
-                Value = "0000000000",
+                Valor = "0000000000",
             };
         }
 
-        public static Cpf GetCpfOverFlow()
+        public static Cpf ObterCpfComValorOverFlow()
         {
             return new Cpf()
             {
-                Value = "000000000000",
+                Valor = "000000000000",
             };
         }
 
 
-        public static Cpf GetCpfIncorrectValue()
+        public static Cpf ObterCpfComValorIncorreto()
         {
             return new Cpf()
             {
-                Value = "BB000000000",
+                Valor = "BB000000000",
             };
         }
     }

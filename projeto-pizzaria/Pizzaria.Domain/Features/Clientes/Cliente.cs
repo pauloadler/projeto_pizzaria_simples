@@ -18,10 +18,31 @@ namespace Pizzaria.Domain.Features.Clientes
         public virtual Endereco Endereco { get; set; }
         public TipoClienteEnum TipoCliente { get; set; }
 
-        public void AdicionarDocumento(TipoClienteEnum TipoCliente, string numeroDocumento)
+        public virtual void Validar()
         {
-            // Cpf Cpf 
-            // Cnpj Cnpj 
+            if (string.IsNullOrEmpty(Nome))
+                throw new ClienteNomeNuloOuVazioExcecao();
+
+            if (string.IsNullOrEmpty(Telefone))
+                throw new ClienteTelefoneNuloOuVazioExcecao();
+
+            if (string.IsNullOrEmpty(NumeroDocumento))
+                throw new ClienteNumeroDocumentoNuloOuVazioExcecao();
+
+            if (Endereco == null)
+                throw new ClienteEnderecoNuloExcecao();
+
+            switch (TipoCliente)
+            {
+                case TipoClienteEnum.Fisico:
+                    Cpf cpf = new Cpf { Valor = NumeroDocumento };
+                    cpf.Validar();
+                    break;
+                case TipoClienteEnum.Juridico:
+                    Cnpj cnpj = new Cnpj { Valor = NumeroDocumento };
+                    cnpj.Validar();
+                    break;
+            }
         }
     }
 }

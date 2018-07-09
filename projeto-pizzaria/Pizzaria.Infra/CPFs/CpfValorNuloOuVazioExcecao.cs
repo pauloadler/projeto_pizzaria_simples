@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Infra.CPFs
 {
-    public class CpfValueNullOrEmptyException : CpfException
+    public class CpfValorNuloOuVazioExcecao : CpfExcecao
     {
-        public CpfValueNullOrEmptyException() : base("CPF não pode ser nulo!")
+        public CpfValorNuloOuVazioExcecao() : base("CPF não pode ser nulo!")
         {
         }
     }
