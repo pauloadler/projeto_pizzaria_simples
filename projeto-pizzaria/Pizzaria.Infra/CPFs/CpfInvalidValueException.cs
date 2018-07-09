@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.Infra.CPFs
 {
-    public class CpfInvalidValueException : CpfException
+    public class CpfInvalidValueException : CpfExcecao
     {
         public CpfInvalidValueException() : base("CPF inválido!")
         {

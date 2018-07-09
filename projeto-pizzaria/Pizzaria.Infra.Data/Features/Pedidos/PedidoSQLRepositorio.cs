@@ -1,6 +1,7 @@
 ﻿using Pizzaria.Domain.Features.Pedidos;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,27 +19,35 @@ namespace Pizzaria.Infra.Data.Features.Pedidos
 
         public Pedido Salvar(Pedido pedido)
         {
-            throw new NotImplementedException();
+            _contexto.Pedidos.Add(pedido);
+            _contexto.SaveChanges();
+
+            return pedido;
         }
 
         public Pedido Atualizar(Pedido pedido)
         {
-            throw new NotImplementedException();
+            _contexto.Entry(pedido).State = EntityState.Modified;
+            _contexto.SaveChanges();
+
+            return pedido;
         }
 
         public Pedido BuscarPorId(long id)
         {
-            throw new NotImplementedException();
+            return _contexto.Pedidos.Where(c => c.Id == id).FirstOrDefault();
         }
 
         public IList<Pedido> Listagem()
         {
-            throw new NotImplementedException();
+            return _contexto.Pedidos.ToList();
         }
 
         public void Excluir(Pedido pedido)
         {
-            throw new NotImplementedException();
+            _contexto.Entry(pedido).State = EntityState.Deleted;
+            _contexto.Pedidos.Remove(pedido);
+            _contexto.SaveChanges();
         }
     }
 }

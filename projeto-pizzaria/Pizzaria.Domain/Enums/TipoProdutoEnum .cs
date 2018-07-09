@@ -10,6 +10,6 @@ namespace Pizzaria.Domain.Enums
         Pizza,
         Calzone,
         Bebida,
-        Borda
+        Adicional
     }
 }

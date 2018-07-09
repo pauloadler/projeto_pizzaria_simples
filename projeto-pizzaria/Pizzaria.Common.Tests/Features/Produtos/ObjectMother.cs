@@ -90,7 +90,7 @@ namespace Pizzaria.Common.Tests.Base
                 Descricao = "Borda de Catupiry",
                 Valor = 1.25,
                 Tamanho = TamanhoProdutoEnum.Pequena,
-                Tipo = TipoProdutoEnum.Borda
+                Tipo = TipoProdutoEnum.Adicional
             };
         }
 
@@ -102,7 +102,7 @@ namespace Pizzaria.Common.Tests.Base
                 Descricao = "Borda de Cheddar",
                 Valor = 1.50,
                 Tamanho = TamanhoProdutoEnum.Media,
-                Tipo = TipoProdutoEnum.Borda
+                Tipo = TipoProdutoEnum.Adicional
             };
         }
 

@@ -41,20 +41,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CNPJs\Cnpj.cs" />
-    <Compile Include="CNPJs\CnpjException.cs" />
-    <Compile Include="CNPJs\CnpjInvalidValueException.cs" />
-    <Compile Include="CNPJs\CnpjValueEqualToZeroException.cs" />
-    <Compile Include="CNPJs\CnpjValueLessThanFourteenException.cs" />
-    <Compile Include="CNPJs\CnpjValueNullOrEmptyException.cs" />
-    <Compile Include="CNPJs\CnpjValueOverFlowException.cs" />
+    <Compile Include="CNPJs\CnpjExcecao.cs" />
+    <Compile Include="CNPJs\CnpjValorInvalidoExcecao.cs" />
+    <Compile Include="CNPJs\CnpjValorIgualZeroExcecao.cs" />
+    <Compile Include="CNPJs\CnpjValorMenorQueCatorzeExcecao.cs" />
+    <Compile Include="CNPJs\CnpjValorNuloOuVazioExcecao.cs" />
+    <Compile Include="CNPJs\CnpjValorOverFlowExcecao.cs" />
     <Compile Include="CPFs\Cpf.cs" />
-    <Compile Include="CPFs\CpfException.cs" />
-    <Compile Include="CPFs\CpfIncorrectValueException.cs" />
+    <Compile Include="CPFs\CpfExcecao.cs" />
+    <Compile Include="CPFs\CpfValorIncorretoExcecao.cs" />
     <Compile Include="CPFs\CpfInvalidValueException.cs" />
-    <Compile Include="CPFs\CpfValueEqualToZeroException.cs" />
-    <Compile Include="CPFs\CpfValueLessThanElevenException.cs" />
-    <Compile Include="CPFs\CpfValueNullOrEmptyException.cs" />
-    <Compile Include="CPFs\CpfValueOverFlowException.cs" />
+    <Compile Include="CPFs\CpfValorIgualZeroExcecao.cs" />
+    <Compile Include="CPFs\CpfValorMenorQueOnzeExcecao.cs" />
+    <Compile Include="CPFs\CpfValorNuloOuVazioExcecao.cs" />
+    <Compile Include="CPFs\CpfValorOverFlowExcecao.cs" />
     <Compile Include="Metodo Extensao\AjudanteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

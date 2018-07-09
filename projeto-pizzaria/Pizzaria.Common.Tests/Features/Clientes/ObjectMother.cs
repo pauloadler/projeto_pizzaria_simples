@@ -14,7 +14,19 @@ namespace Pizzaria.Common.Tests.Base
             {
                 Nome = "Teste",
                 Telefone = "999988993",
-                NumeroDocumento = "818373283",
+                NumeroDocumento = "32999959010",
+                Endereco = endereco,
+                TipoCliente = TipoClienteEnum.Fisico
+            };
+        }
+
+        public static Cliente ObterClienteTipoPessoaFisicaComCpfInvalido(Endereco endereco)
+        {
+            return new Cliente
+            {
+                Nome = "Teste",
+                Telefone = "999988993",
+                NumeroDocumento = "3299995901",
                 Endereco = endereco,
                 TipoCliente = TipoClienteEnum.Fisico
             };
@@ -26,7 +38,19 @@ namespace Pizzaria.Common.Tests.Base
             {
                 Nome = "Teste",
                 Telefone = "999988993",
-                NumeroDocumento = "871738378",
+                NumeroDocumento = "0867169600011",
+                Endereco = endereco,
+                TipoCliente = TipoClienteEnum.Juridico
+            };
+        }
+
+        public static Cliente ObterClienteTipoPessoaJuridicaComCnpjInvalido(Endereco endereco)
+        {
+            return new Cliente
+            {
+                Nome = "Teste",
+                Telefone = "999988993",
+                NumeroDocumento = "086716960001",
                 Endereco = endereco,
                 TipoCliente = TipoClienteEnum.Juridico
             };
@@ -76,17 +100,6 @@ namespace Pizzaria.Common.Tests.Base
                 Telefone = "999988993",
                 NumeroDocumento = "871738378",
                 TipoCliente = TipoClienteEnum.Juridico
-            };
-        }
-
-        public static Cliente ObterClienteComTipoClienteInvalido(Endereco endereco)
-        {
-            return new Cliente
-            {
-                Nome = "Teste",
-                Telefone = "999988993",
-                NumeroDocumento = "871738378",
-                Endereco = endereco
             };
         }
     }
