@@ -1,5 +1,7 @@
 ﻿using Pizzaria.Domain.Features.Clientes;
 using Pizzaria.Domain.Features.Enderecos;
+using Pizzaria.Domain.Features.ItensPedido;
+using Pizzaria.Domain.Features.Pedidos;
 using Pizzaria.Domain.Features.Produtos;
 using Pizzaria.Infra.CNPJs;
 using Pizzaria.Infra.CPFs;
@@ -22,11 +24,20 @@ namespace Pizzaria.Common.Tests.Base
             Endereco endereco = ObjectMother.ObterEndereco();
             Cliente clienteFisico = ObjectMother.ObterClienteTipoPessoaFisica(endereco);
             Cliente clienteJuridico = ObjectMother.ObterClienteTipoPessoaJuridica(endereco);
-            Produto produto = ObjectMother.ObterCalzone();
+            Cliente clienteComPedido = ObjectMother.ObterClienteTipoPessoaFisica(endereco);
+
+            Produto calzone = ObjectMother.ObterCalzone();
+            Produto pizzaMediaDeCalabresa = ObjectMother.ObterPizzaMediaDeCalabresa();
+
+            Pedido pedido = ObjectMother.GetPedidoSemUmaListaItens(clienteComPedido);
+            pedido.AdicionarPizza(1, pizzaMediaDeCalabresa);
 
             contexto.Clientes.Add(clienteFisico);
             contexto.Clientes.Add(clienteJuridico);
-            contexto.Produtos.Add(produto);
+            contexto.Clientes.Add(clienteComPedido);
+            contexto.Produtos.Add(calzone);
+            contexto.Produtos.Add(pizzaMediaDeCalabresa);
+            contexto.Pedidos.Add(pedido);
 
             contexto.SaveChanges();
 

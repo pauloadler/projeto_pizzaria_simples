@@ -13,11 +13,13 @@ namespace Pizzaria.Common.Tests.Base
         {
             return new Pedido()
             {
-                Data = DateTime.Now,
+                Data = DateTime.Now.AddHours(4),
                 Cliente = cliente,
                 EmitirNFe = false,
                 FormaPagamento = FormaPagamentoEnum.Dinheiro,
                 StatusPedido = StatusPedidoEnum.AguardandoEntrega,
+                Setor = "Setor X",
+                Responsavel = "Doctor Who"
             };
         }
 
@@ -25,12 +27,70 @@ namespace Pizzaria.Common.Tests.Base
         {
             return new Pedido
             {
-                Data = DateTime.Now,
+                Data = DateTime.Now.AddHours(4),
                 Cliente = cliente,
                 ItensPedidos = itensPedidos,
                 EmitirNFe = false,
                 FormaPagamento = FormaPagamentoEnum.Dinheiro,
                 StatusPedido = StatusPedidoEnum.AguardandoEntrega,
+                Setor = "Setor X",
+                Responsavel = "Doctor Who"
+            };
+        }
+
+        public static Pedido GetPedidoComClienteNulo(List<ItemPedido> itensPedidos)
+        {
+            return new Pedido
+            {
+                Data = DateTime.Now.AddHours(4),
+                ItensPedidos = itensPedidos,
+                EmitirNFe = false,
+                FormaPagamento = FormaPagamentoEnum.Dinheiro,
+                StatusPedido = StatusPedidoEnum.AguardandoEntrega,
+                Setor = "Setor X",
+                Responsavel = "Doctor Who"
+            };
+        }
+
+       public static Pedido GetPedidoDataMenorQueAtual(Cliente cliente, List<ItemPedido> itensPedidos)
+        {
+            return new Pedido
+            {
+                Cliente = cliente,
+                ItensPedidos = itensPedidos,
+                EmitirNFe = false,
+                FormaPagamento = FormaPagamentoEnum.Dinheiro,
+                StatusPedido = StatusPedidoEnum.AguardandoEntrega,
+                Setor = "Setor X",
+                Responsavel = "Doctor Who"
+            };
+        }
+
+        public static Pedido GetPedidoSetorNuloOuVazio(Cliente cliente, List<ItemPedido> itensPedidos)
+        {
+            return new Pedido
+            {
+                Data = DateTime.Now.AddHours(4),
+                Cliente = cliente,
+                ItensPedidos = itensPedidos,
+                EmitirNFe = false,
+                FormaPagamento = FormaPagamentoEnum.Dinheiro,
+                StatusPedido = StatusPedidoEnum.AguardandoEntrega,
+                Responsavel = "Doctor Who"
+            };
+        }
+
+        public static Pedido GetPedidoResponsavelNuloOuVazio(Cliente cliente, List<ItemPedido> itensPedidos)
+        {
+            return new Pedido
+            {
+                Data = DateTime.Now.AddHours(4),
+                Cliente = cliente,
+                ItensPedidos = itensPedidos,
+                EmitirNFe = false,
+                FormaPagamento = FormaPagamentoEnum.Dinheiro,
+                StatusPedido = StatusPedidoEnum.AguardandoEntrega,
+                Setor = "Setor X",
             };
         }
 
